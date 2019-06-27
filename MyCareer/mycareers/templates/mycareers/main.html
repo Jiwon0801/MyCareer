@@ -1,0 +1,382 @@
+<main id="main" role="main" class="container">
+    <div class="sticky-top pt-3 p-1 bg-white" style="z-index:16;">
+        <hr>
+    </div>
+
+
+    <style>
+        .kt-widget-5 .kt-widget-5__item:first-child {
+    margin-top: 0;
+}
+
+.kt-widget-5 .kt-widget-5__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    margin: 0.5rem 0;
+}
+.kt-widget-5 .kt-widget-5__item.kt-widget-5__item--dark:before {
+    background: #9E9E9E;
+}
+.kt-widget-5 .kt-widget-5__item.kt-widget-5__item--info:before {
+    background: #5578eb;
+}
+.kt-widget-5 .kt-widget-5__item.kt-widget-5__item--danger:before {
+    background: #fd397a;
+}
+.kt-widget-5 .kt-widget-5__item.kt-widget-5__item--success:before {
+    background: #1dc9b7;
+}
+.kt-widget-5 .kt-widget-5__item.kt-widget-5__item--warning:before {
+    background: #ffb822;
+}
+.kt-widget-5 .kt-widget-5__item:before {
+    position: absolute;
+    display: block;
+    width: 0.2rem;
+    height: 100%;
+    top: 0.45rem;
+    height: calc(100% - 0.8rem);
+    content: "";
+    border-radius: 0.2rem;
+}
+.kt-widget-5 .kt-widget-5__item {
+    padding-left: 1.4rem;
+    padding-right: 0.5rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0px;
+}
+.kt-widget-5 .kt-widget-5__item .kt-widget-5__item-title {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #a7a7a7;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.kt-widget-5 .kt-widget-5__item .kt-widget-5__item-datetime {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: black;
+}
+    
+    </style>
+    
+    
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="template2" class="main-timeline">
+                {% for item in timeline %}
+                <div class="timeline">
+                    <span class="timeline-icon"></span>
+                    <span class="year">{{ item.start|date:'Y-m' }}</span>
+                    <div class="timeline-content" data-id="{{ forloop.counter }}" data-item="{{ item.table_type }}" data-pk="{{ item.pk }}">
+                    {% if item.table_type == 0 %}
+                        <span class="icon fas fa-user"></span>
+                        <h3 class="title">군 입대</h3>
+                        <p class="description">
+                            <div class="kt-widget-5">
+                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                    <div class="kt-widget-5__item-info">
+                                        <div class="kt-widget-5__item-datetime">
+                                            복무기간
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }} ~ {{ item.army_end | date:'Y-m-d' }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kt-widget-5">
+                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                    <div class="kt-widget-5__item-info">
+                                        <div class="kt-widget-5__item-datetime">
+                                            병역구분
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.army_div }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kt-widget-5">
+                                    <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                        <div class="kt-widget-5__item-info">
+                                            <div class="kt-widget-5__item-datetime">
+                                                군별
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.army_group }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-widget-5">
+                                    <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                        <div class="kt-widget-5__item-info">
+                                            <div class="kt-widget-5__item-datetime">
+                                                계급
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.army_rank }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </p>
+                    </div>
+                    {% elif item.table_type == 1 %}
+                        <span class="icon fas fa-graduation-cap"></span>
+                        <h3 class="title">{{ item.name }}({{ item.loc }}) 입학</h3>
+                        <p class="description">
+                            <div class="kt-widget-5">
+                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                    <div class="kt-widget-5__item-info">
+                                        <div class="kt-widget-5__item-datetime">
+                                            기간
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }} ~ {{ item.high_end | date:'Y-m-d' }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kt-widget-5">
+                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                    <div class="kt-widget-5__item-info">
+                                        <div class="kt-widget-5__item-datetime">
+                                            계열
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.category }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                    {% elif item.table_type == 2 %}
+                    <span class="icon fas fa-graduation-cap"></span>
+                        <h3 class="title">{{ item.name }}({{ item.loc }}) 입학</h3>
+                        <p class="description">
+                            <div class="kt-widget-5">
+                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                    <div class="kt-widget-5__item-info">
+                                        <div class="kt-widget-5__item-datetime">
+                                            기간
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }} ({{ item.start_type }}) ~ {{ item.uni_end | date:'Y-m-d' }} ({{ item.end_type }})</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kt-widget-5">
+                                    <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                        <div class="kt-widget-5__item-info">
+                                            <div class="kt-widget-5__item-datetime">
+                                                단과대 / 학과
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.college }} / {{ item.major }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </p>
+                    </div>
+                    {% elif item.table_type == 3 %}
+                    <span class="icon fas fa-briefcase"></span>
+                            <h3 class="title">{{ item.name }} 입사</h3>
+                            <p class="description">
+                                <div class="kt-widget-5">
+                                        <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                            <div class="kt-widget-5__item-info">
+                                                <div class="kt-widget-5__item-datetime">
+                                                    기간
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }} ~ {{ item.career_end | date:'Y-m-d' }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        소재지
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.loc }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        부서 / 직급
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.dept }} / {{ item.position }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        직무
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.job }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </p>
+                        </div>
+                    {% elif item.table_type == 4 %}
+                    <span class="icon fas fa-id-card"></span>
+                            <h3 class="title">{{ item.name }} 취득</h3>
+                            <p class="description">
+                                <div class="kt-widget-5">
+                                        <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                            <div class="kt-widget-5__item-info">
+                                                <div class="kt-widget-5__item-datetime">
+                                                    취득일
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        만료일
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.cert_end | date:'Y-m-d' }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <div class="kt-widget-5">
+                                        <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                            <div class="kt-widget-5__item-info">
+                                                <div class="kt-widget-5__item-datetime">
+                                                    자격증 번호
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.cert_num }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        발급기관
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.organization }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </p>
+                        </div>
+                    {% elif item.table_type == 5 %}
+                    <span class="icon fas fa-book-reader"></span>
+                            <h3 class="title">{{ item.name }}</h3>
+                            <p class="description">
+                                    <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        기간
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }} ~ {{ item.edu_end | date:'Y-m-d' }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="kt-widget-5">
+                                        <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                            <div class="kt-widget-5__item-info">
+                                                <div class="kt-widget-5__item-datetime">
+                                                    교육기관
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.organization }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </p>
+                        </div>
+                    {% elif item.table_type == 6 %}
+                    <span class="icon fas fa-medal"></span>
+                            <h3 class="title">{{ item.name }} 수상</h3>
+                            <p class="description">
+                                    <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        수상일자
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kt-widget-5">
+                                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                    <div class="kt-widget-5__item-info">
+                                                        <div class="kt-widget-5__item-datetime">
+                                                            발급기관
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.organization }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="kt-widget-5">
+                                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                    <div class="kt-widget-5__item-info">
+                                                        <div class="kt-widget-5__item-datetime">
+                                                            수상내용
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.content }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </p>
+                        </div>
+                    {% elif item.table_type == 7 %}
+                    <span class="icon fas fa-pencil-alt"></span>
+                            <h3 class="title">{{ item.name }} 수행</h3>
+                            <p class="description">
+                                    <div class="kt-widget-5">
+                                        <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                            <div class="kt-widget-5__item-info">
+                                                <div class="kt-widget-5__item-datetime">
+                                                    수행처
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.order }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget-5">
+                                            <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                <div class="kt-widget-5__item-info">
+                                                    <div class="kt-widget-5__item-datetime">
+                                                        프로젝트 요약
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.summary }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kt-widget-5">
+                                                <div class="kt-widget-5__item kt-widget-5__item--dark">
+                                                    <div class="kt-widget-5__item-info">
+                                                        <div class="kt-widget-5__item-datetime">
+                                                            기간
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kt-widget-5__item-title">{{ item.start | date:'Y-m-d' }} ~ {{ item.project_end | date:'Y-m-d' }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                       
+                            </p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,117 @@
+<div class="tab-pane container fade tab-scroll" id="menu7">
+        {% if project.pk == None %}
+        <form action="{% url 'mycareers:project_create' %}" class="career-form" method="POST" id="project-form">
+            {% else %}
+            <form action="{% url 'mycareers:project_update' project.pk %}" class="career-form" method="POST"
+                id="project-form">
+                <script>
+                    $(function () {
+                        $("#btn-init-project").click(function () {
+                            if (confirm("해당 정보를 초기화 하시겠습니까?")) {
+                                var $form = $('.tab-pane.active').find('form');
+                                $form.attr('action', "{% url 'mycareers:project_delete' project.pk %}");
+                                $form.submit();
+                                alert('초기화 했습니다.');
+                            }
+                        });
+                    });
+                </script>
+                {% endif %}
+                {% csrf_token %}
+    
+    
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <h4 class="pt-3 edu-title" data-section="formProject">
+                            <i class="fas fa-angle-double-right text-muted"></i>
+                            프로젝트
+                        </h4>
+                    </div>
+                    <div class="pt-3">
+                        <button type="button" id="btn-init-project" class="btn btn-outline-secondary">초기화</button>
+                    </div>
+                </div>
+                <hr>
+    
+                <section id="formProject" class="collapse show">
+                    <div class="row">
+                        <div class="col-md-6 p-3">
+                            <label for="">프로젝트명</label>
+                            <input type="text" class="form-control" name="name" value="{{ project.name }}">
+                        </div>
+                    </div>
+    
+                    <div class="row">
+    
+                        <div class="col-md-6 p-3">
+                            <label for="">수행처</label>
+                            <input type="text" class="form-control" name="order" value="{{ project.order }}">
+                        </div>
+    
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-6 p-3">
+                            <label for="">역할</label>
+                            <input type="text" class="form-control" name="role" value="{{ project.role}}">
+                        </div>
+                        <div class="col-md-6 p-3">
+                            <label for="">요약</label>
+                            <input type="text" class="form-control" name="summary" value="{{ project.summary }}">
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-6 p-3">
+                            <label for="project_start">시작일</label>
+                            <input id="project_start" name="start"
+                                value="{{ project.start | date:'Y-m-d' }}" />
+                            <script>
+                                $('#project_start').datepicker({
+                                    format: 'yyyy-mm-dd',
+                                    uiLibrary: 'bootstrap4'
+                                });
+                            </script>
+                        </div>
+                        <div class="col-md-6 p-3 ">
+                            <label for="project_end">종료일</label>
+                            <input id="project_end" name="project_end" value="{{ project.project_end | date:'Y-m-d'}}" />
+                            <script>
+                                $('#project_end').datepicker({
+                                    format: 'yyyy-mm-dd',
+                                    uiLibrary: 'bootstrap4'
+                                });
+                            </script>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-12 p-3">
+                            <label for="">내용</label> <br>
+                            <div class="form-group">
+                                <textarea name="content" id="content" cols="130%"
+                                    rows="10%"> {{ project.content }} </textarea>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <!--
+                    <div class="col-md-9 p-3">
+                        <label for="">첨부파일</label>
+                        <input type="file" class="form-control" name="attachments">
+                    </div>
+                    -->
+                        <!-- <div class="col-auto pt-3 pb-0">
+                            <label for="">&nbsp;</label>
+                            <div class="form-group">
+                                <button id="btnAddCert" type="button" class="btn btn-outline-secondary ml-1">
+                                    프로젝트 추가하기
+                                </button>
+                            </div>
+                        </div> -->
+                    </div>
+                </section>
+            </form>
+    </div>

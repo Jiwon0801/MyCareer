@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MyCareer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/timeline1.css" rel="stylesheet">
+    <link href="css/timeline2.css" rel="stylesheet">
+    <link href="css/sidemenu.css" rel="stylesheet">
+
+    <link href="vendor/dialog/mgDialog.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/dialog/jquery-ui.min.css">
+    <link rel="stylesheet" href="vendor/dialog/mgDialog.css">
+
+    <!-- DatePicker -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        textarea {
+            border: 1px solid #999999;
+            width: 100%;
+            margin: 5px 0;
+            padding: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main id="main" role="main" class="container">
+        <div class="sticky-top pt-3 p-1 bg-white" style="z-index:16;">
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="template2" class="main-timeline">
+                    {% for item in timeline %}
+                        <h1>{{ item }}</h1>
+                    {% endfor %}
+
+                    <div class="timeline">
+                        <span class="timeline-icon"></span>
+                        <span class="year">2017</span>
+                        <div class="timeline-content" data-id="1">
+                            <span class="icon fa fa-globe"></span>
+                            <h3 class="title">Web Desginer</h3>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id
+                                pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis
+                                magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam
+                                accumsan ornare posuere.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <span class="timeline-icon"></span>
+                        <span class="year">2016</span>
+                        <div class="timeline-content" data-id="2">
+                            <span class="icon fa fa-rocket"></span>
+                            <h3 class="title">Web Developer</h3>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id
+                                pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis
+                                magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam
+                                accumsan ornare posuere.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <span class="timeline-icon"></span>
+                        <span class="year">2016</span>
+                        <div class="timeline-content" data-id="3">
+                            <span class="icon fa fa-rocket"></span>
+                            <h3 class="title">Web Developer</h3>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id
+                                pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis
+                                magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam
+                                accumsan ornare posuere.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <span class="timeline-icon"></span>
+                        <span class="year">2016</span>
+                        <div class="timeline-content" data-id="4">
+                            <span class="icon fa fa-rocket"></span>
+                            <h3 class="title">Web Developer</h3>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis justo id
+                                pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis
+                                magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam
+                                accumsan ornare posuere.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="template1" class="main-timeline">
+                    <div class="timeline">
+                        <div class="timeline-content" data-id="5">
+                            <span class="year">2013-2014</span>
+                            <span class="post">Web Desginer</span>
+                            <h4 class="title">Williamson</h4>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec
+                                sagittis mauris. Donec mollis nunc eu est maximus eleifend. In ac malesuada nisl.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-content" data-id="6">
+                            <span class="year">2014-2015</span>
+                            <span class="post">Web Developer</span>
+                            <h4 class="title">Kristiana</h4>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                                nec</p>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content" data-id="7">
+                            <span class="year">2014-2015</span>
+                            <span class="post">Web Developer</span>
+                            <h4 class="title">Kristiana</h4>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec
+                                sagittis mauris. Donec mollis nunc eu est maximus eleifend. In ac malesuada nisl.</p>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content" data-id="8">
+                            <span class="year">2014-2015</span>
+                            <span class="post">Web Developer</span>
+                            <h4 class="title">Kristiana</h4>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec
+                                sagittis mauris. Donec mollis nunc eu est maximus eleifend. In ac malesuada nisl.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="mySidenav" class="sidenav border-left">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <div class="row p-3">
+            <div class="col-md-12">
+
+
+                <div class="row">
+                    <div class="col-md-6 p-3">
+                        <label for="filter_start">시작 기간</label>
+                        <input id="filter_start" />
+                        <script>
+                            $('#filter_start').datepicker({
+                                uiLibrary: 'bootstrap4'
+                            });
+                        </script>
+                        <!--<input type="text" class="form-control">-->
+                    </div>
+                    <div class="col-md-6 p-3 ">
+                        <label for="filter_end">종료 기간</label>
+                        <input id="filter_end" />
+                        <script>
+                            $('#filter_end').datepicker({
+                                uiLibrary: 'bootstrap4'
+                            });
+                        </script>
+                    </div>
+
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 pt-3 pb-3">
+                        <label for="sort">정렬기준</label>
+                        <select name="sort" id="" class="form-control">
+                            <option class="text-dark" value="">날짜 오름차순</option>
+                            <option class="text-dark" value="">날짜 내림차순</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pt-3 pb-">
+                        <label for="category">카테고리</label>
+                        <select name="category" id="" class="form-control">
+                            <option class="text-dark" value="">학력</option>
+                            <option class="text-dark" value="">경력</option>
+                            <option class="text-dark" value="">어학 및 자격증</option>
+                            <option class="text-dark" value="">교육</option>
+                            <option class="text-dark" value="">수상</option>
+                            <option class="text-dark" value="">프로젝트</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="align-self-center mr-auto ml-auto text-center">
+                <label for="">&nbsp;</label>
+                <div class="form-group">
+                    <button id="btnAddMajor" type="button" class="btn btn-outline-secondary ml-1">
+                        PDF 추출하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="pt-3 fixed-bottom bg-white">
+        <div class="container d-flex justify-content-center pb-1">
+            <div class="row">
+                <div class="mx-auto">
+                    <button type="button" class="btn btn-default btn-circle btn-md main-btn m-3 profile-img"></button>
+                    <button type="button" class="btn btn-default btn-circle btn-md main-btn m-3" title="커리어 관리"
+                        data-toggle="modal" data-target="#settingModal" data-backdrop="static"><i
+                            class="fas fa-cog"></i></button>
+                    <button type="button" class="btn btn-default btn-circle btn-md main-btn m-3" data-toggle="tooltip"
+                        data-placement="top" title="필터" onclick="toggleSide(this);" data-open="false"><i
+                            class="fas fa-filter"></i></button>
+                    <button type="button" class="btn btn-default btn-circle btn-md main-btn m-3" data-toggle="tooltip"
+                        data-placement="top" title="지원하기"><i class="fas fa-building"></i></button>
+                    <button type="button" class="btn btn-default btn-circle btn-md main-btn m-3"
+                        onclick="closeAllDialog()">
+                        <i class="fas fa-redo-alt"></i></button>
+                </div>
+                <div class="col-md-4 my-md-auto col-sm-12 mb-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                            aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-dark" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between p-3 bg-dark text-muted">
+            <div class="my-auto">
+                <a href="" class="logo" style="width:150px;">
+                    <img src="images/logo1.png" width="100" alt="">
+                </a>
+            </div>
+            <div class="my-auto">Copyright &copy; MyCareer.com 2019</div>
+            <div class="my-auto"><i class="fas fa-envelope"></i> Contact us</div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="settingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" data-toggle="tab" href="#menu1"><i
+                                    class="fas fa-user"></i> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="tab" href="#menu2"><i
+                                    class="fas fa-graduation-cap"></i> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="tab" href="#menu3"><i
+                                    class="fas fa-briefcase"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="tab" href="#menu4"><i
+                                    class="fas fa-id-card"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="tab" href="#menu5"><i
+                                    class="fas fa-book-reader"></i> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="tab" href="#menu6"><i class="fas fa-medal"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="tab" href="#menu7"><i
+                                    class="fas fa-pencil-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="tab" href="#menu8"><i
+                                    class="fas fa-ellipsis-h"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <button type="button" class="close my-auto" data-dismiss="modal" aria-label="Close">
+                        <span class="text-white" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="">
+                    <div class="tab-content">
+
+                        <div class="tab-pane container active tab-scroll" id="menu1">
+                            <form action="" class="career-form">
+                                <h4 class="pt-3 edu-title" data-section="form-personal-info">
+                                    <i class="fas fa-angle-double-right text-muted"></i>
+                                    인적사항
+                                </h4>
+                                <hr>
+
+                                <section id="form-personal-info" class="collapse show">
+                                    <div class="row">
+                                        <div class="col-md-3 p-3">
+                                            <label for="user_name">성명</label>
+                                            <input type="text" class="form-control" name="user_name">
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="en_f_nm">이름(Last name)</label>
+                                            <input type="text" class="form-control" name="en_f_nm">
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="en_l_nm">성(Family name)</label>
+                                            <input type="text" class="form-control" name="en_l_nm">
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="ch_nm">한자이름</label>
+                                            <input type="text" class="form-control" name="ch_nm">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 p-3">
+                                            <label for="birth">생년월일</label>
+                                            <input type="text" class="form-control" name="birth">
+                                        </div>
+                                        <div class="col-md-3 pt-3 pb-0">
+                                            <div class="form-group">
+                                                <label for="">성별</label>
+                                                <div class="form-group pt-2">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" name="sex" id="sex-radio-1"
+                                                            class="custom-control-input">
+                                                        <label class="custom-control-label" for="sex-radio-1">남성</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio ml-3">
+                                                        <input type="radio" name="sex" id="sex-radio-2"
+                                                            class="custom-control-input">
+                                                        <label class="custom-control-label" for="sex-radio-2">여성</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 pt-3 pb-0">
+                                            <div class="form-group">
+                                                <label for="">혼인여부</label>
+                                                <div class="form-group pt-2">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" name="martial_status"
+                                                            id="martial_status-radio-1" class="custom-control-input">
+                                                        <label class="custom-control-label"
+                                                            for="martial_status-radio-1">미혼</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio ml-3">
+                                                        <input type="radio" name="martial_status"
+                                                            id="martial_status-radio-2" class="custom-control-input">
+                                                        <label class="custom-control-label"
+                                                            for="martial_status-radio-2">기혼</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 p-3">
+                                            <label for="email">이메일</label>
+                                            <input type="text" class="form-control" name="email">
+                                        </div>
+                                        <div class="col-md-4 p-3">
+                                            <label for="phone1">연락처</label>
+                                            <input type="text" class="form-control" name="phone1">
+                                        </div>
+                                        <div class="col-md-4 p-3">
+                                            <label for="phone2">집 번호</label>
+                                            <input type="text" class="form-control" name="phone2">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 p-3">
+                                            <label for="zip_code">우편번호</label>
+                                            <input type="text" class="form-control" name="zip_code">
+                                        </div>
+                                        <div class="col-md-4 p-3">
+                                            <label for="addr">주소</label>
+                                            <input type="text" class="form-control" name="addr">
+                                        </div>
+                                        <div class="col-md-4 p-3">
+                                            <label for="detail_addr">상세주소</label>
+                                            <input type="text" class="form-control" name="detail_addr">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 p-3">
+                                            <label for="hobby">취미</label>
+                                            <input type="text" class="form-control" name="hobby">
+                                        </div>
+                                        <div class="col-md-4 p-3">
+                                            <label for="speciality">특기</label>
+                                            <input type="text" class="form-control" name="speciality">
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <h4 class="pt-3 edu-title" data-section="formEdu2">
+                                    <i class="fas fa-angle-double-right text-muted"></i>
+                                    병역 정보 입력</h4>
+                                <hr>
+
+                                <section id="formEdu2" class="collapse show">
+                                    <div class="row">
+                                        <div class="col-md-4 pt-3 pb-0">
+                                            <label for="army_div">병역구분</label>
+                                            <select name="army_div" id="army_div" class="form-control">
+                                                <option class="text-dark" value="0">군필</option>
+                                                <option class="text-dark" value="1">병역면제</option>
+                                                <option class="text-dark" value="2">미필</option>
+                                                <option class="text-dark" value="3">복무중</option>
+                                                <option class="text-dark" value="4">비대상(여성)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 pt-3 pb-0">
+                                            <label for="army_group">군별</label>
+                                            <select name="army_group" id="army_group" class="form-control">
+                                                <option class="text-dark" value="0">육군</option>
+                                                <option class="text-dark" value="1">해군</option>
+                                                <option class="text-dark" value="2">공군</option>
+                                                <option class="text-dark" value="3">해병대</option>
+                                                <option class="text-dark" value="4">전투경찰</option>
+                                                <option class="text-dark" value="5">의무경찰</option>
+                                                <option class="text-dark" value="6">전문연구요원</option>
+                                                <option class="text-dark" value="7">산업기능요원</option>
+                                                <option class="text-dark" value="8">상근예비역</option>
+                                                <option class="text-dark" value="9">공익근무요원</option>
+                                                <option class="text-dark" value="10">현역(경교대)</option>
+                                                <option class="text-dark" value="11">공익법무관</option>
+                                                <option class="text-dark" value="12">해경</option>
+                                                <option class="text-dark" value="13">현역(의무소방)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 pt-3 pb-0">
+                                            <label for="army_rank">계급</label>
+                                            <select name="army_rank" id="army_rank" class="form-control">
+                                                <option class="text-dark" value="0">대장</option>
+                                                <option class="text-dark" value="1">중장</option>
+                                                <option class="text-dark" value="2">소장</option>
+                                                <option class="text-dark" value="3">준장</option>
+                                                <option class="text-dark" value="4">대령</option>
+                                                <option class="text-dark" value="5">중령</option>
+                                                <option class="text-dark" value="6">소령</option>
+                                                <option class="text-dark" value="7">대위</option>
+                                                <option class="text-dark" value="8">중위</option>
+                                                <option class="text-dark" value="9">소위</option>
+                                                <option class="text-dark" value="10">준위</option>
+                                                <option class="text-dark" value="11">원사</option>
+                                                <option class="text-dark" value="12">상사</option>
+                                                <option class="text-dark" value="13">중사</option>
+                                                <option class="text-dark" value="14">하사</option>
+                                                <option class="text-dark" value="15">병장</option>
+                                                <option class="text-dark" value="16">상병</option>
+                                                <option class="text-dark" value="17">일병</option>
+                                                <option class="text-dark" value="18">이병</option>
+                                                <option class="text-dark" value="19">수경</option>
+                                                <option class="text-dark" value="20">상경</option>
+                                                <option class="text-dark" value="21">일경</option>
+                                                <option class="text-dark" value="22">이경</option>
+                                                <option class="text-dark" value="23">기타</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 pt-3 pb-0">
+                                            <label for="army_reason">면제사유</label>
+                                            <select name="army_reason" id="army_reason" class="form-control">
+                                                <option class="text-dark" value="0">신체장애</option>
+                                                <option class="text-dark" value="1">정신장애</option>
+                                                <option class="text-dark" value="2">가사</option>
+                                                <option class="text-dark" value="3">해외시민권자</option>
+                                                <option class="text-dark" value="4">귀순자</option>
+                                                <option class="text-dark" value="5">수술</option>
+                                                <option class="text-dark" value="6">보충역(4급)</option>
+                                                <option class="text-dark" value="7">제2국민역(5급)</option>
+                                                <option class="text-dark" value="8">생계유지</option>
+                                                <option class="text-dark" value="9">교통사고</option>
+                                                <option class="text-dark" value="10">질병</option>
+                                                <option class="text-dark" value="11">비등록장애</option>
+                                                <option class="text-dark" value="12">등록된장애</option>
+                                                <option class="text-dark" value="13">흉터</option>
+                                                <option class="text-dark" value="14">보훈대상</option>
+                                                <option class="text-dark" value="15">신체기형</option>
+                                                <option class="text-dark" value="16">습관성탈골</option>
+                                                <option class="text-dark" value="17">알레르기</option>
+                                                <option class="text-dark" value="18">외국인</option>
+                                                <option class="text-dark" value="19">체중</option>
+                                                <option class="text-dark" value="20">기타</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6 pt-3 pb-0 mr-0">
+                                            <label for="army_id">군번</label>
+                                            <input type="text" class="form-control" name="army_id">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 p-3">
+                                            <label for="army_start">복무기간</label>
+                                            <input id="army_start" />
+                                            <script>
+                                                $('#army_start').datepicker({
+                                                    uiLibrary: 'bootstrap4'
+                                                });
+                                            </script>
+                                        </div>
+                                        <div class="col-md-6 p-3 ">
+                                            <label for="army_end">&nbsp;</label>
+                                            <input id="army_end" />
+                                            <script>
+                                                $('#army_end').datepicker({
+                                                    uiLibrary: 'bootstrap4'
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 pt-3 pb-0">
+                                            <label for="army_etc">복무 중 특이사항</label>
+                                            <textarea name="army_etc" id="army_etc" cols="70%" rows="10%"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="mr-auto ml-auto text-center">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary btn-block btnDelAllSubject" id=""
+                                                data-section="formEdu2"><i class="fas fa-minus-circle"></i>
+                                                전체삭제</button>
+                                        </div>
+                                    </div>
+
+
+                                </section>
+                            </form>
+                        </div>
+                        <div class="tab-pane container fade tab-scroll" id="menu2">
+                            <form action="" class="career-form">
+                                <h4 class="pt-3 edu-title" data-section="formEdu1">
+                                    <i class="fas fa-angle-double-right text-muted"></i>
+                                    고등학교</h4>
+                                <hr>
+
+                                <section id="formEdu1" class="collapse show">
+                                    <div class="row">
+                                        <div class="col-md-4 p-3">
+                                            <label for="">학교명</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4 p-3">
+                                            <label for="">전공계열</label>
+                                            <select name="" id="" class="form-control">
+                                                <option class="text-dark" value="">문과계열</option>
+                                                <option class="text-dark" value="">이과계열</option>
+                                                <option class="text-dark" value="">전문(실업)계열</option>
+                                                <option class="text-dark" value="">예체능계</option>
+                                                <option class="text-dark" value="">특성화/마이스터고</option>
+                                                <option class="text-dark" value="">특수목적고</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 p-3">
+                                            <label for="">소재지</label>
+                                            <select name="" id="" class="form-control">
+                                                <option class="text-dark" value="">서울</option>
+                                                <option class="text-dark" value="">대전</option>
+                                                <option class="text-dark" value="">대구</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 p-3">
+                                            <label for="">재학기간</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="">&nbsp;</label>
+                                            <select name="" class="form-control">
+                                                <option class="text-dark" value="">입학</option>
+                                                <option class="text-dark" value="">편입</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="">&nbsp;</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="">&nbsp;</label>
+                                            <select name="" class="form-control">
+                                                <option class="text-dark" value="">졸업</option>
+                                                <option class="text-dark" value="">재학중</option>
+                                                <option class="text-dark" value="">휴학중</option>
+                                                <option class="text-dark" value="">수료</option>
+                                                <option class="text-dark" value="">중퇴</option>
+                                                <option class="text-dark" value="">자퇴</option>
+                                                <option class="text-dark" value="">졸업예정</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </section>
+
+                                <h4 class="pt-3 edu-title" data-section="formEdu2">
+                                    <i class="fas fa-angle-double-right text-muted"></i>
+                                    대학,대학원 정보 입력</h4>
+                                <hr>
+
+                                <section id="formEdu2" class="collapse show">
+                                    <div class="row">
+                                        <div class="col-md-12 pt-3 pb-0">
+                                            <label for="">대학</label>
+                                            <select name="" id="" class="form-control">
+                                                <option class="text-dark" value="">대학(2,3년)</option>
+                                                <option class="text-dark" value="">대학교(4년)</option>
+                                                <option class="text-dark" value="">대학원(석사)</option>
+                                                <option class="text-dark" value="">대학원(박사)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 pt-3 pb-0">
+                                            <label for="">학교명</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 pt-3 pb-0">
+                                            <label for="">지역</label>
+                                            <select name="" id="" class="form-control">
+                                                <option class="text-dark" value="">서울</option>
+                                                <option class="text-dark" value="">대전</option>
+                                                <option class="text-dark" value="">대구</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 pt-3 pb-0">
+                                            <label for="">전공</label>
+                                            <select name="" id="" class="form-control">
+                                                <option class="text-dark" value="">전공구분 선택</option>
+                                                <option class="text-dark" value="">전공</option>
+                                                <option class="text-dark" value="">부전공</option>
+                                                <option class="text-dark" value="">복수전공</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 pt-3 pb-0">
+                                            <label for="">&nbsp;</label>
+                                            <select name="" class="form-control">
+                                                <option class="dark" value="">전공계열 선택</option>
+                                                <option class="text-dark" value="">어문학</option>
+                                                <option class="text-dark" value="">영어/영문</option>
+                                                <option class="text-dark" value="">중어/중문</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 pt-3 pb-0">
+                                            <label for="">&nbsp;</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="전공학과 입력">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-auto pt-3 pb-0">
+                                            <label for="">&nbsp;</label>
+                                            <div class="form-group">
+                                                <button id="btnAddMajor" type="button"
+                                                    class="btn btn-outline-secondary ml-1">전공
+                                                    추가하기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="wrapSubMajor" class="row"></div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 p-3">
+                                            <label for="">재학기간</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="">&nbsp;</label>
+                                            <select name="" class="form-control">
+                                                <option class="text-dark" value="">입학</option>
+                                                <option class="text-dark" value="">편입</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="">&nbsp;</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-3 p-3">
+                                            <label for="">&nbsp;</label>
+                                            <select name="" class="form-control">
+                                                <option class="text-dark" value="">졸업</option>
+                                                <option class="text-dark" value="">재학중</option>
+                                                <option class="text-dark" value="">휴학중</option>
+                                                <option class="text-dark" value="">수료</option>
+                                                <option class="text-dark" value="">중퇴</option>
+                                                <option class="text-dark" value="">자퇴</option>
+                                                <option class="text-dark" value="">졸업예정</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 pt-3 pb-0">
+                                            <label for="">주/야간</label>
+                                            <select name="" id="" class="form-control">
+                                                <option class="text-dark" value="" disabled selected>주/야간 선택</option>
+                                                <option class="text-dark" value="">주간</option>
+                                                <option class="text-dark" value="">야간</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4 pt-3 pb-0">
+                                            <label for="">학점 기준</label>
+                                            <select name="" id="" class="form-control">
+                                                <option class="text-dark" value="" disabled selected>만점 기준</option>
+                                                <option class="text-dark" value="">4.5</option>
+                                                <option class="text-dark" value="">4.0</option>
+                                                <option class="text-dark" value="">3.5</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4 pt-3 pb-0">
+                                            <div class="form-group">
+                                                <label for="">편입 여부</label>
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" name="jb-radio" id="jb-radio-1"
+                                                            class="custom-control-input">
+                                                        <label class="custom-control-label" for="jb-radio-1">예</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio ml-3">
+                                                        <input type="radio" name="jb-radio" id="jb-radio-2"
+                                                            class="custom-control-input">
+                                                        <label class="custom-control-label" for="jb-radio-2">아니오</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 pt-3 pb-0">
+                                            <label for="">성적 입력</label>
+                                            <table id="tbSubject1"
+                                                class="table table-sm table-striped table-bordered tb-center">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="text-center">No.</th>
+                                                        <th scope="col">수강년도</th>
+                                                        <th scope="col">학기</th>
+                                                        <th scope="col">전공구분</th>
+                                                        <th scope="col">이수학점</th>
+                                                        <th scope="col">과목명</th>
+                                                        <th scope="col">성적</th>
+                                                        <th scope="col">재수강</th>
+                                                        <th scope="col">삭제/수정</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td>2019</td>
+                                                        <td>1</td>
+                                                        <td>전공</td>
+                                                        <td>3</td>
+                                                        <td>운영체제</td>
+                                                        <td>A+</td>
+                                                        <td>Y</td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-link text-muted btn-delSubject">삭제</button>
+                                                            / <button type="button"
+                                                                class="btn btn-sm btn-link text-muted">수정</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">2</td>
+                                                        <td>2019</td>
+                                                        <td>계절학기</td>
+                                                        <td>전공</td>
+                                                        <td>3</td>
+                                                        <td>운영체제</td>
+                                                        <td>A+</td>
+                                                        <td>Y</td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-link text-muted btn-delSubject">삭제</button>
+                                                            / <button type="button"
+                                                                class="btn btn-sm btn-link text-muted">수정</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-md-9 text-center">
+                                                    <button type="button"
+                                                        class="btn btn-secondary btn-block btnAddSubject"
+                                                        data-section="formEdu2"><i class="fas fa-plus-circle"></i>
+                                                        추가하기</button>
+                                                </div>
+                                                <div class="col-md-3 text-center">
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary btn-block btnDelAllSubject"
+                                                        id="" data-section="formEdu2"><i
+                                                            class="fas fa-minus-circle"></i> 전체삭제</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </section>
+                            </form>
+                        </div>
+                        <div class="tab-pane container fade" id="menu3">Lorem ipsum dolor sit amet, consectetur
+                            adipiscing
+                            elit. Vivamus mattis justo id
+                            pulvinar suscipit. Pellentesque rutrum vehicula erat sed dictum. Integer quis turpis
+                            magna. Suspendisse tincidunt elit at erat tincidunt, vel vulputate arcu dapibus. Etiam
+                            accumsan ornare posuere.
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">닫기</button>
+                    <button type="button" class="btn btn-secondary">저장</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/dialog/mgDialog.js"></script>
+    <script src="js/common.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/dialog/jquery-ui.min.js"></script>
+</body>
+
+</html>

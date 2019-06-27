@@ -1,0 +1,318 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>MyCareer</title>
+  <meta name="author" content="Alvaro Trigo Lopez" />
+  <meta name="description" content="fullPage full-screen background videos." />
+  <meta name="keywords" content="fullpage,jquery,demo,screen,fullscreen,video,full-screen" />
+  <meta name="Resource-type" content="Document" />
+
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/fullpage/fullpage.css' %}" />
+  <!--    <link rel="stylesheet" type="text/css" href="examples.css" />-->
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+  <link href="{% static 'css/timeline.css' %}" rel="stylesheet">
+  <link href="{% static 'plugins/fontawesome/css/all.min.css' %}" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+    .my-font {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    /* Style for our header texts
+	* --------------------------------------- */
+    h1 {
+      font-size: 5em;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .img-fluid {
+      width: 150px;
+      height: 150px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+      opacity: 0.3;
+      z-index: 4;
+    }
+
+
+    /* Centered texts in each section
+	* --------------------------------------- */
+    .section {
+      overflow: hidden;
+    }
+
+    #myVideo {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 100% 100%;
+      background-position: center center;
+      background-size: contain;
+      object-fit: cover;
+      /*cover video background */
+      z-index: 3;
+      -webkit-filter: brightness(0.7);
+    }
+    /* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+    #section0 .layer {
+      position: absolute;
+      z-index: 4;
+      width: 100%;
+      left: 0;
+      top: 43%;
+      font-family: 'Noto Sans KR', sans-serif;
+      /*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+      -webkit-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    /*solves problem with overflowing video in Mac with Chrome */
+    #section0 {
+      overflow: hidden;
+
+    }
+
+
+    /* Bottom menu
+	* --------------------------------------- */
+    #infoMenu li a {
+      color: #fff;
+    }
+
+
+    /* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+    video::-webkit-media-controls {
+      display: none !important;
+    }
+
+    .testimonials {
+      padding: 50px 0;
+    }
+
+    .features-icons .features-icons-item {
+      max-width: 20rem;
+    }
+
+    .features-icons .features-icons-item .features-icons-icon {
+      height: 7rem;
+    }
+
+    .features-icons .features-icons-item .features-icons-icon i {
+      font-size: 4.5rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      height: 3.5rem;
+      width: 3.5rem;
+      background-color: #495057;
+      color: #fff !important;
+      border-radius: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 3.5rem;
+      margin-right: 1rem;
+    }
+
+    .carousel-item {
+      height: 65vh;
+      min-height: 350px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .header-title {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .header-title:first-of-type {
+      animation: showup 7s infinite;
+    }
+
+    .header-title:last-of-type {
+      width: 0px;
+      animation: reveal 7s infinite;
+    }
+
+    .header-title:last-of-type span {
+      margin-left: -500px;
+      animation: slidein 7s infinite;
+    }
+
+    @keyframes showup {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes slidein {
+      0% {
+        margin-left: -800px;
+      }
+
+      20% {
+        margin-left: -800px;
+      }
+
+      35% {
+        margin-left: 0px;
+      }
+
+      100% {
+        margin-left: 0px;
+      }
+    }
+
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+        width: 0px;
+      }
+
+      20% {
+        opacity: 1;
+        width: 0px;
+      }
+
+      30% {
+        width: 500px;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        width: 500px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="fullpage">
+    <div class="section " id="section0">
+
+      <video id="myVideo" loop muted data-autoplay style="padding:80px 70px">
+        <source src="{% static 'video/13.mp4' %}" type="video/mp4">
+      </video>
+
+      <div class="layer text-white text-center">
+
+        <div class="display-4 header-title">당신의</div>
+        <div class="display-4 header-title">커리어를 정리하세요!</div>
+
+        <p class="lead mb-0 mt-3">with
+          <img src="{% static 'images/logo1.png' %}" width="150">
+        </p>
+        <a href="{% provider_login_url 'google' %}"> <img class="pt-3" src="{% static 'images/btn_google_signin_light_normal_web.png' %}" alt=""></a>
+      </div>
+    </div>
+
+    <div class="section" id="section1">
+      <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+      <div style="    margin-left: auto; margin-right: auto; width: 100%; max-width: 1500px;">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{% static 'images/img04.png' %}" alt="" style="width:100%;">
+          </div>
+
+          <div class="col-md-5 my-auto showcase-text">
+            <h1 class="text-dark" style="font-size:3.5rem; font-weight:900;">직관적인 타임라인</h1>
+            <br>
+            <h3>
+              한눈에 보는 당신의 인생.
+            </h3>
+            <h3>
+              이것이 바로 <span class="" style="color:#FF9800;font-weight:900;">MyCarrer</span>.
+            </h3>
+            <br>
+            <p class="lead mb-0 mt-3">
+              mycareer.com은 당신의 커리어와 관련된 모든 이벤트를 관리합니다. 한 번에 볼 수 있는 포트폴리오를 제공합니다.
+            </p>
+            <p class="lead mb-0  mt-3">
+              당신의 모든 경험을 쉽고 편하게 정리해주는 아름다운 서비스를 즐겨보세요. '마이커리어닷컴'은 항상 여러분들을 응원합니다.
+            </p>
+            <br>
+            <p class="lead mb-0  mt-3" style="font-weight:900; color:grey;">
+              "여러분의 경험을 저희와 함께 쌓아보지 않으시겠어요?"
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="{% static 'plugins/fullpage/fullpage.js' %}"></script>
+  
+  <script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+      verticalCentered: true,
+      loopTop: false,
+      loopBottom: false,
+      navigation: true,
+      slidesNavigation: false
+    });
+
+    document.addEventListener('paste', function (event) {
+      var clipText = event.clipboardData.getData('Text');
+      alert(clipText);
+      $("#te").val(clipText);
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<div id="mySidenav" class="sidenav border-left">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <div class="row p-3">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 p-3">
+                    <label for="filter_start">시작 기간</label>
+                    <input id="filter_start" />
+                    <script>
+                        $('#filter_start').datepicker({
+                            format: 'yyyy-mm-dd HH:MM',
+                            uiLibrary: 'bootstrap4'
+                        });
+                    </script>
+                </div>
+                <div class="col-md-6 p-3 ">
+                    <label for="filter_end">종료 기간</label>
+                    <input id="filter_end" />
+                    <script>
+                        $('#filter_end').datepicker({
+                            format: 'yyyy-mm-dd HH:MM',
+                            uiLibrary: 'bootstrap4'
+                        });
+                    </script>
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 pt-3 pb-3">
+                    <label for="sort">정렬기준</label>
+                    <select name="sort" id="" class="form-control">
+                        <option class="text-dark" value="">날짜 오름차순</option>
+                        <option class="text-dark" value="">날짜 내림차순</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 pt-3 pb-">
+                    <label for="category">카테고리</label>
+                    <select name="category" id="" class="form-control">
+                        <option class="text-dark" value="">학력</option>
+                        <option class="text-dark" value="">경력</option>
+                        <option class="text-dark" value="">어학 및 자격증</option>
+                        <option class="text-dark" value="">교육</option>
+                        <option class="text-dark" value="">수상</option>
+                        <option class="text-dark" value="">프로젝트</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="align-self-center mr-auto ml-auto text-center">
+            <label for="">&nbsp;</label>
+            <div class="form-group">
+                <button id="btnAddMajor" type="button" class="btn btn-outline-secondary ml-1">
+                    PDF 추출하기
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

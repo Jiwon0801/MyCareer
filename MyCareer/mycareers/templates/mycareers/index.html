@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>MyCareer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome/css/all.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/common.css' %}" rel="stylesheet">
+    <link href="{% static 'css/timeline1.css' %}" rel="stylesheet">
+    <link href="{% static 'css/timeline2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sidemenu.css' %}" rel="stylesheet">
+
+    <link href="{% static 'vendor/dialog/mgDialog.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'vendor/dialog/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/dialog/mgDialog.css' %}">
+
+    <!-- DatePicker -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+    
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+    
+    <script>    
+        console.log("{{timeline|length}}")
+        
+    </script>
+</head>
+
+<body>
+    
+    {% include 'mycareers/main.html' %}
+
+    {% include 'mycareers/side_menu.html' %}
+
+    {% include 'mycareers/footer.html' %}
+    
+    {% include 'mycareers/settings.html' %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/dialog/mgDialog.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/dialog/jquery-ui.min.js' %}"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script>
+        $(function () {
+            
+            // 지원하기 버튼
+            $("#btn-apply").click(function () {
+                $.ajax({
+               type: "POST",
+               url: "{% url 'mycareers:chrome_extension' %}",
+               data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
+               dataType: "json",
+               success: function(res){
+
+                   object_info = {
+                       'basic': res['basic'][0],
+                       'career': res['career'][0],
+                   }
+
+                   var data = JSON.stringify(object_info);
+                   //console.log(data);
+                   var $temp = $("<input>");
+                   $("body").append($temp);
+                   $temp.val(data).select();
+                   document.execCommand("copy");
+                   $temp.remove();
+                   alert('정보를 가져왔습니다.');
+               },
+               error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트
+                   console.log(error);
+               }
+           });
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<div class="tab-pane container fade tab-scroll" id="menu4">
+        {% if cert.pk == None %}
+            <form action="{% url 'mycareers:cert_create' %}" class="career-form" method="POST" id="career-form">
+        {% else %}
+            <script>
+                $(function () {
+                    $("#btn-init-cert").click(function () {
+                        if (confirm("해당 정보를 초기화 하시겠습니까?")) {
+                            var $form = $('.tab-pane.active').find('form');
+                            $form.attr('action', "{% url 'mycareers:cert_delete' cert.pk %}");
+                            $form.submit();
+                            alert('초기화 했습니다.');
+                        }
+                    });
+                });
+            </script>
+            <form action="{% url 'mycareers:cert_update' cert.pk %}" class="career-form" method="POST" id="career-form">
+        {% endif %}
+                {% csrf_token %}
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <h4 class="pt-3 edu-title" data-section="formCert">
+                            <i class="fas fa-angle-double-right text-muted"></i>
+                            자격증</h4>
+                        <hr>
+                    </div>
+                    <div class="pt-3">
+                        <button type="button" id="btn-init-cert" class="btn btn-outline-secondary">초기화</button>
+                    </div>
+                </div>
+                <section id="formCert" class="collapse show">
+                    <div class="row">
+                        <div class="col-md-4 p-3">
+                            <label for="">자격증 분류</label>
+                            <select name="category" id="" class="form-control">
+                                <option class="text-dark" value="어학" {% if cert.category == "어학" %} selected{% endif %}>어학
+                                </option>
+                                <option class="text-dark" value="기타" {% if cert.category == "기타" %} selected{% endif %}>기타
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <!--
+    
+                <div class="row">
+                    <div class="col-md-4 p-3">
+                        <label for="">자격증 사본</label>
+                        <input type="file" class="form-control">
+                    </div>
+                </div>
+    
+                -->
+    
+                    <div class="row">
+                        <div class="col-md-4 p-3">
+                            <label for="">자격증 이름</label>
+                            <input type="text" class="form-control" name="name" value="{{cert.name}}">
+                        </div>
+    
+                        <div class="col-md-4 p-3">
+                            <label for="">발급기관</label>
+                            <input type="text" class="form-control" name="organization" value="{{cert.organization}}">
+                        </div>
+                        <div class="col-md-4 p-3">
+                            <label for="">자격증 번호</label>
+                            <input type="text" class="form-control" name="cert_num" value="{{cert.cert_num}}">
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-4 p-3">
+                            <label for="">점수</label>
+                            <input type="text" class="form-control" name="score" value="{{cert.score}}">
+                        </div>
+                        <div class="col-md-4 p-3">
+                            <label for="">등급</label>
+                            <input type="text" class="form-control" name="grade" value="{{cert.grade}}">
+                        </div>
+    
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-6 p-3">
+                            <label for="cert_start">취득년월</label>
+                            <input id="cert_start" name="start" value="{{cert.start|date:'Y-m-d'}}" />
+                            <script>
+                                $('#cert_start').datepicker({
+                                    format: 'yyyy-mm-dd',
+                                    uiLibrary: 'bootstrap4'
+                                });
+                            </script>
+                        </div>
+                        <div class="col-md-6 p-3 ">
+                            <label for="cert_end">만료기간</label>
+                            <input id="cert_end" name="cert_end" value="{{cert.cert_end|date:'Y-m-d'}}" />
+                            <script>
+                                $('#cert_end').datepicker({
+                                    format: 'yyyy-mm-dd',
+                                    uiLibrary: 'bootstrap4'
+                                });
+                            </script>
+                        </div>
+                    </div>
+    
+    
+                    <div class="row">
+                        <!--
+                    <div class="col-md-10 p-3">
+                        <label for="">첨부파일</label>
+                        <input type="file" class="form-control">
+                    </div>
+                    -->
+                        <!-- <div class="col-auto pt-3 pb-0">
+                            <label for="">&nbsp;</label>
+                            <div class="form-group">
+                                <button id="btnAddCert" type="button" class="btn btn-outline-secondary ml-1">
+                                    자격증 추가하기
+                                </button>
+                            </div>
+                        </div> -->
+                    </div>
+    
+    
+                </section>
+    
+    
+            </form>
+    </div>
